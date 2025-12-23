@@ -1,0 +1,290 @@
+<!DOCTYPE html><html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Under The Same Moon 💜</title><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Poppins',sans-serif;
+  background:radial-gradient(circle at top,#2e1065,#0f172a 75%);
+  min-height:100vh;
+  color:#f5f3ff;
+  overflow-x:hidden;
+}
+.hidden{display:none}
+
+/* ===== BACKGROUND ===== */
+.moon{
+  position:fixed;
+  top:40px;right:30px;
+  width:110px;height:110px;
+  border-radius:50%;
+  background:radial-gradient(circle,#fff,#fde68a 70%);
+  box-shadow:0 0 40px #fde68a,0 0 80px #fde68a88;
+  animation:moonFloat 6s ease-in-out infinite;
+  z-index:0;
+}
+.stars span{
+  position:fixed;
+  color:white;
+  opacity:.5;
+  font-size:12px;
+  animation:twinkle 3s infinite alternate;
+}
+.stars span:nth-child(1){top:15%;left:10%}
+.stars span:nth-child(2){top:30%;right:15%;animation-delay:1s}
+.stars span:nth-child(3){top:60%;left:20%;animation-delay:2s}
+.stars span:nth-child(4){top:75%;right:25%;animation-delay:1.5s}
+
+@keyframes moonFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes twinkle{from{opacity:.2}to{opacity:.8}}
+
+/* ===== OPENING ===== */
+.opening{
+  position:relative;
+  z-index:2;
+  max-width:360px;
+  margin:140px auto 0;
+  background:rgba(255,255,255,.12);
+  backdrop-filter:blur(12px);
+  border-radius:30px;
+  padding:36px 28px 42px;
+  text-align:center;
+  box-shadow:0 25px 60px rgba(0,0,0,.5);
+  animation:pop .7s ease;
+}
+.opening h1{
+  font-family:'Dancing Script',cursive;
+  font-size:32px;
+  color:#fde68a;
+  margin-bottom:26px;
+}
+.btns{display:flex;justify-content:center;gap:16px}
+button{
+  border:none;
+  padding:12px 28px;
+  border-radius:999px;
+  font-size:15px;
+  cursor:pointer;
+  transition:.25s;
+}
+.yes{
+  background:linear-gradient(135deg,#a78bfa,#fde68a);
+  color:#1e1b4b;
+  box-shadow:0 12px 25px rgba(253,230,138,.5);
+}
+.no{
+  background:rgba(255,255,255,.9);
+  color:#1e1b4b;
+}
+
+/* ===== MAIN CONTENT ===== */
+.main{
+  position:relative;
+  z-index:2;
+  max-width:420px;
+  margin:40px auto 80px;
+  padding:0 16px;
+  animation:fade .8s;
+}
+
+.title{
+  text-align:center;
+  font-family:'Dancing Script',cursive;
+  font-size:40px;
+  color:#fde68a;
+  margin-bottom:10px;
+}
+.subtitle{
+  text-align:center;
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  font-size:14px;
+  opacity:.85;
+  margin-bottom:32px;
+}
+
+/* ===== LOVE NOTE ===== */
+.love-note{
+  background:rgba(255,255,255,.14);
+  backdrop-filter:blur(10px);
+  border-radius:24px;
+  padding:22px;
+  margin-bottom:36px;
+  box-shadow:0 18px 40px rgba(0,0,0,.45);
+  line-height:1.8;
+  font-size:14px;
+}
+.love-note p{margin-bottom:12px}
+.love-note .sign{
+  text-align:right;
+  font-family:'Dancing Script',cursive;
+  font-size:22px;
+  color:#fde68a;
+}
+
+/* ===== COUNTDOWN ===== */
+.countdown{
+  background:rgba(255,255,255,.12);
+  backdrop-filter:blur(10px);
+  border-radius:22px;
+  padding:18px;
+  margin-bottom:36px;
+  box-shadow:0 18px 40px rgba(0,0,0,.4);
+}
+.countdown h3{
+  text-align:center;
+  font-family:'Dancing Script',cursive;
+  color:#fde68a;
+  margin-bottom:14px;
+}
+.time{display:flex;justify-content:space-between;text-align:center}
+.num{font-size:22px;font-weight:600;color:#fde68a}
+.lbl{font-size:11px;opacity:.7}
+
+/* ===== SCRAPBOOK ===== */
+.scrap{
+  display:flex;
+  gap:22px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding-bottom:20px;
+}
+.scrap::-webkit-scrollbar{display:none}
+.page{
+  flex:0 0 85%;
+  background:#fff;
+  color:#1e1b4b;
+  border-radius:28px;
+  padding:16px;
+  box-shadow:0 25px 50px rgba(0,0,0,.4);
+  scroll-snap-align:center;
+  position:relative;
+}
+.page::before{content:'🌙';position:absolute;top:-14px;left:20px;font-size:22px}
+.page::after{content:'⭐';position:absolute;bottom:-14px;right:22px;font-size:20px}
+.page img{width:100%;border-radius:20px;margin-bottom:12px}
+.caption{
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  font-size:14px;
+  margin-bottom:8px;
+}
+.letterBtn{
+  background:#ede9fe;
+  border:none;
+  padding:8px 16px;
+  border-radius:14px;
+  font-size:12px;
+}
+.letter{
+  display:none;
+  background:#fefce8;
+  margin-top:12px;
+  padding:14px;
+  border-radius:16px;
+  font-family:'Playfair Display',serif;
+  font-size:13px;
+  animation:open .4s ease;
+}
+
+@keyframes pop{from{transform:scale(.85);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes open{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+
+/* === UPDATE: Bigger Scrapbook Images === */
+.slide img {
+  transform: scale(1.15);
+}
+
+@media (max-width: 768px) {
+  .slide img {
+    transform: scale(1.2);
+  }
+}
+
+</style></head>
+<body><div class="moon"></div>
+<div class="stars">
+  <span>✦</span><span>✦</span><span>✦</span><span>✦</span>
+</div><!-- OPENING --><div class="opening" id="opening">
+  <h1>Kamu sayang aku gak?</h1>
+  <div class="btns">
+    <button class="yes" id="yes">YES 💜</button>
+    <button class="no" id="no">NO 😝</button>
+  </div>
+</div><!-- MAIN --><div class="main hidden" id="main">
+  <div class="title">A gift for us, remembering some moments</div>
+  <div class="subtitle">One year together under the same moonlight</div>  <div class="love-note">
+    <p>Yahoo, My Baby Nia, I can't believe we've been together for exactly 1 year.</p>
+    <p>It's been a year since we've been together, honestly I'm really moved when I type this, moved by our journey to get here with laughter, tears, depression and finally here we are.</p>
+    <p>You know I didn't believe that I deserved you, but remembering how you treated me and of course always wanting to repay your love, I always remember your words "we are under the same moonlight" it was so sweet i will never forget it</p>
+    <p>This is the only gift I can give to you, but in this gift I pour all my feelings for you, I describe my feelings,"Your beauty is like the moonlight and the stars at night" that's what I think and I'm always grateful for this year with you, I love you in a gentle but consistent way, I try to make sure you are always happy with me🩷</p>
+    <div class="sign">— Haris</div>
+  </div>  <div class="countdown">
+    <h3>Countdown to December 30, 2025</h3>
+    <div class="time">
+      <div><div class="num" id="d">0</div><div class="lbl">Day</div></div>
+      <div><div class="num" id="h">0</div><div class="lbl">O'clock</div></div>
+      <div><div class="num" id="m">0</div><div class="lbl">Minute</div></div>
+      <div><div class="num" id="s">0</div><div class="lbl">Second</div></div>
+    </div>
+  </div>  <div class="scrap">
+    <div class="page">
+      <img src="Photo1.jpg">
+      <div class="caption">do you remember this?, Aku gragas bet ke kamu sayang :v.</div>
+      <button class="letterBtn" onclick="toggle(0)">💌 buka surat</button>
+      <div class="letter">walaupun konyol ya, aku ga menyesali keputusan aku,but look now I still love you until today, kalau di inget inget cringe juga :v .</div>
+    </div>
+    <div class="page">
+      <img src="Photo2.jpg">
+      <div class="caption">When I saw your photo I immediately remembered the beauty of the night sky.</div>
+      <button class="letterBtn" onclick="toggle(1)">💌 buka surat</button>
+      <div class="letter">I want to always be by your side when you are happy or sad, I want to always accompany you because I love you. </div>
+    </div>
+    <div class="page">
+      <img src="Photo3.jpg">
+      <div class="caption">It's always fun playing with you, btw gampang amat :v.</div>
+      <button class="letterBtn" onclick="toggle(2)">💌 buka surat</button>
+      <div class="letter">When we play on the Call, time feels so fast, your laughter and voice make me feel comfortable and sometimes I miss things like that, t Don't forget, I also really like your singing voice, it makes me sleepy because of its beauty.</div>
+    </div>
+  </div><audio id="music" loop src="Her.mp3"></audio>
+
+</div><script>
+const no=document.getElementById('no');
+no.addEventListener('touchstart',()=>move());
+no.addEventListener('mouseenter',()=>move());
+function move(){no.style.transform=`translate(${Math.random()*120-60}px,${Math.random()*120-60}px)`}
+
+document.getElementById('yes').onclick=()=>{
+  opening.classList.add('hidden');
+  main.classList.remove('hidden');
+  document.getElementById('music').play();
+}
+
+function toggle(i){
+  const l=document.querySelectorAll('.letter');
+  l[i].style.display=l[i].style.display==='block'?'none':'block';
+}
+
+const target=new Date('December 30, 2025 00:00:00').getTime();
+setInterval(()=>{
+  const now=new Date().getTime();
+  const g=target-now;if(g<0)return;
+  d.innerText=Math.floor(g/(1000*60*60*24));
+  h.innerText=Math.floor((g/(1000*60*60))%24);
+  m.innerText=Math.floor((g/(1000*60))%60);
+  s.innerText=Math.floor((g/1000)%60);
+},1000);
+
+// === UPDATE: Move Countdown to Top ===
+window.addEventListener('load', () => {
+  const countdown = document.querySelector('.countdown');
+  const container = document.querySelector('.container');
+  if (countdown && container) {
+    container.insertBefore(countdown, container.firstChild);
+  }
+});
+
+</script></body>
+</html>
